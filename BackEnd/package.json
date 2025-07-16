@@ -1,0 +1,13 @@
+{
+  "name": "your-project",
+  "version": "1.0.0",
+  "type": "module",
+  "devDependencies": {
+    "nodemon": "^3.1.10"
+  },
+  "dependencies": {
+    "cors": "^2.8.5",
+    "express": "^5.1.0",
+    "string-similarity": "^4.0.4"
+  }
+}
