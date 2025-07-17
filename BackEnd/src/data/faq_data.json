@@ -1,54 +1,218 @@
 [
   {
-    "question": "what is the admission process",
-    "answer": "The admission process involves submitting an online application, attending counseling, and submitting the required documents."
+    "question": "Who is the Chairman of RCE?",
+    "answer": "Sri K. Venu Gopal is the esteemed Chairman of Ramachandra College of Engineering (RCE). Under his leadership, RCE has transformed into an autonomous institution with state-of-the-art facilities and strong industry connections."
   },
   {
-    "question": "what are the fees",
-    "answer": "The fee structure varies based on the program. Please visit our website or contact the admissions office for detailed information."
+    "question": "Who is the Managing Director of RCE?",
+    "answer": "Mr. K. Sai Rohit serves as the Secretary & Managing Director of Ramachandra College of Engineering. He holds an MBA in Human Resources Management and Services from Amity Business School Noida (2018-2020)."
   },
   {
-    "question": "how to contact the college",
-    "answer": "You can contact the college by email at info@rce.edu or call us at 123-456-7890."
+    "question": "Who is the Director-Principal of RCE?",
+    "answer": "Dr. M. Muralidhar Rao serves as the Director-Principal of Ramachandra College of Engineering. He has forty years of experience in academics and administration, having worked as Principal for two decades in different engineering colleges across Andhra Pradesh, Karnataka, and Odisha."
   },
   {
-    "question": "what are the admission requirements",
-    "answer": "For undergraduate admission to Ramachandra College of Engineering, we look for students with:\n• Minimum GPA of 4.0 (average)\n• SAT score around 1320 or ACT score around 29 (average)\n• Strong personal statement\n• Extracurricular activities\n• Letters of recommendation\n\nOur acceptance rate is 68%."
+    "question": "Who is the Dean of Academics?",
+    "answer": "Dr. S S Sarma (Dr. Subbramayya Sarma S) serves as the Dean of Academics at RCE. He is a Professor of Electrical and Electronics Engineering and has been a full-time faculty member since 2008."
   },
   {
-    "question": "when are the application deadlines",
-    "answer": "Application deadlines for Ramachandra College of Engineering:\n• Fall semester: July 24\n• Spring semester: September 12\n• Transfer students: April 25\n\nThe application fee is ₹150."
+    "question": "Who is the Dean of Internal Affairs and HR?",
+    "answer": "Dr. B. Prasad Babu serves as the Dean of Internal Affairs and Human Resources at RCE. He has more than ten years of experience in academic leadership and is an active member of the Indian Society for Technical Teaching (ISTE)."
   },
   {
-    "question": "how much is tuition fee",
-    "answer": "Tuition rates at Ramachandra College of Engineering:\n\nUndergraduate:\n• In-state: ₹52,000 per year\n• Out-of-state: ₹1,50,000 per year\n\nGraduate:\n• In-state: ₹30,000 per year\n• Out-of-state: ₹80,000 per year\n\nAdditional fees: ₹52,000 per year\n\n72% of students receive aid with an average aid package of ₹25,500."
+    "question": "Who is the Dean of Placements?",
+    "answer": "Dr. A. Chiranjeive serves as the Dean of Placements and Industry Relations at RCE. He excels in identifying training needs, designing effective training programs, and understanding student personalities for job placements."
   },
   {
-    "question": "what majors do you offer",
-    "answer": "Ramachandra College of Engineering offers:\n• 75 undergraduate programs\n• 45 graduate programs\n\nOur most popular majors include: Computer Science, Engineering, Artificial Intelligence & Data Science, Cybersecurity, Internet of Things, Electronics and Communication, Electrical Engineering, Mechanical Engineering, Civil Engineering, Business Administration, Management Studies.\n\nWe have 4 schools/colleges including: School of Engineering, Reasearch and Development, School of Computer Science, School of Business."
+    "question": "Who is the Dean of Research and Development?",
+    "answer": "Dr. Jarabala Ranga serves as the Dean of Research and Development at RCE."
   },
   {
-    "question": "tell me about campus housing",
-    "answer": "Campus housing at Ramachandra College of Engineering:\n• 12 residence halls\n• Room types: Single, Double, Triple, Suite\n• Cost: $18,000 per academic year\n• Meal plans: 19 meals/week, 14 meals/week, 10 meals/week\n\nNote: Freshmen are required to live on campus."
+    "question": "Who is the Administrative Officer?",
+    "answer": "P. Sai Krishna serves as the Administrative Officer at RCE."
   },
   {
-    "question": "how can I get financial aid",
-    "answer": "Financial aid at Ramachandra College of Engineering:\n• 72% of students receive aid\n• Average aid package: ₹25,500\n\nTypes of aid available:\n• Merit scholarships\n• Need-based grants\n• Federal and state loans\n• Work-study opportunities\n\nWe recommend completing the FAFSA as early as possible. The priority deadline is March 1st."
+    "question": "Who is the Controller of Examinations?",
+    "answer": "The Examination Cell can be contacted at +918074277603 and via email at examcell@rcee.ac.in."
   },
   {
-    "question": "what is campus life like",
-    "answer": "Campus life at Ramachandra College of Engineering is vibrant with:\n• 200 student organizations\n• 18 sports teams in the Intercollege Competition\n• Recreational facilities including: Fitness Center, Track, Basketball Courts, Kho-Kho, Badminton Courts, Volleyball Courts, Cricket Ground, Football Ground, Kabbadi Court\n• Dining options: Main Dining Hall, Student Union Food Court, Food Trucks\n• Annual traditions: Founders Day, Sankranthi, College Fest, Branch Events"
+    "question": "Who is the HOD of Computer Science Engineering?",
+    "answer": "Dr. G. Chamundeswari serves as the Professor & HOD of the Computer Science Engineering department."
   },
   {
-    "question": "what are the important academic dates",
-    "answer": "Important dates at Ramachandra College of Engineering:\n• Fall semester: August 18 to January 29\n• Spring semester: February 2 to May 30\n• Spring break: 10-17\n• Commencement: June 15"
+    "question": "Who is the HOD of Electronics and Communication Engineering?",
+    "answer": "Dr. B. Raghavalah serves as the Professor & HOD of the Electronics and Communication Engineering department."
   },
   {
-    "question": "can you give an overview of the college",
-    "answer": "Ramachandra College of Engineering is a comprehensive university founded in 2007 located in Eluru, Andhra Pradesh, India.\n\nOur motto is \"Illuminating Paths to Knowledge.\" We have approximately 15000 students (12000 undergraduate and 3000 graduate) and 50 faculty members, creating a student-to-faculty ratio of 60:1.\n\nOur beautiful campus spans 10 acres and is accredited by the National Board of Accreditation (NBA), All India Council for Technical Education (AICTE)."
+    "question": "Who is the HOD of Civil Engineering?",
+    "answer": "Dr. Kusuma Sundara Kumar serves as the Professor & HOD of the Civil Engineering department."
   },
   {
-    "question": "how do I contact admissions",
-    "answer": "Contact information for Ramachandra College of Engineering:\n\nAdmissions Office:\n• Email: admissions@rcee.in\n• Phone: (+91) 12345 67890\n\nMain website: www.rcee.com\nCampus location: Eluru, Andhra Pradesh, India"
+    "question": "Who is the HOD of Mechanical Engineering?",
+    "answer": "The Mechanical Engineering department has experienced faculty, but specific HOD information needs to be confirmed from the official website."
+  },
+  {
+    "question": "Who is the HOD of Electrical and Electronics Engineering?",
+    "answer": "The EEE department has qualified faculty members, but specific HOD information needs verification from official sources."
+  },
+  {
+    "question": "What are the current fee structures for different programs?",
+    "answer": "Based on the official website information: B. Tech programs: ₹60,200 per year (8 semesters, 4 years); M. Tech programs: ₹60,500 per year (4 semesters, 2 years)."
+  },
+  {
+    "question": "What B. Tech specializations are offered and their seat intake?",
+    "answer": "- Computer Science Engineering: 180 seats\n- CSE - IoT: 60 seats\n- CSE - Cyber Security: 60 seats\n- Artificial Intelligence & Data Science: 120 seats\n- CSE - AI & ML: 120 seats\n- MBA: 120 seats\n- BBA: 60 seats"
+  },
+  {
+    "question": "What M. Tech specializations are offered?",
+    "answer": "- Computer Science Engineering: 18 seats\n- VLSI: 6 seats\n- Power Electronics: 6 seats\n- AI & Data Science: 18 seats\n- Machine Design: 6 seats"
+  },
+  {
+    "question": "What laboratory facilities are available?",
+    "answer": "RCE has 70+ well-equipped laboratories including: For Civil Engineering: Surveying Lab, Fluid Mechanics & Hydraulic Machines Lab, Strength of Materials Lab, Concrete Technology Lab, Environmental Engineering Lab, GIS & CAD Lab, Geotechnical Engineering Lab, Highway Engineering Lab, Engineering Geology Lab; Computer labs with high-speed internet connectivity; Departmental laboratories for all engineering disciplines."
+  },
+  {
+    "question": "What library facilities are available?",
+    "answer": "RCE has a central library with 27,300+ volumes and departmental libraries. The library operates from 9 AM to 9 PM on weekdays and provides digital resources, internet access, and separate reading rooms. Contact: +9199125689930, library@rceee.ac.in."
+  },
+  {
+    "question": "What sports and fitness facilities are available?",
+    "answer": "- Athletics track and fitness center\n- Gymnasium facilities\n- Table tennis, chess, carrom facilities"
+  },
+  {
+    "question": "What are the latest placement statistics?",
+    "answer": "For Academic Year 2023-24: Total 600+ offers; Civil: 33 placements, Mechanical: 39, EEE: 78, ECE: 126, CSE: 144, AI&DS: 44, CS: 41, IoT: 47, MBA: 64; UG Median salary: ₹3.2 LPA, PG ₹2.4 LPA; Highest package: ₹7.25 LPA (CSE); Overall placement rate: 89%."
+  },
+  {
+    "question": "Which companies visit for placements?",
+    "answer": "Major recruiters include: Accenture, TCS, Wipro, Tech Mahindra, Infosys, HCL, Cognizant, Cisco, RedHat Academy, Capgemini, Enzen, Tvarna, Formonic Technologies."
+  },
+  {
+    "question": "What training programs are available?",
+    "answer": "RCE provides comprehensive training including: 100 hours of training during vacation after pre-final year; Technical skills training, personality development, communication skills; Aptitude & reasoning, verbal ability training; Programming languages: C, Java, Python, Android; CAD, MATLAB training; Civil service exam preparation."
+  },
+  {
+    "question": "What is the complete address and contact information?",
+    "answer": "Address: Ramachandra College of Engineering (RCE), NH-16 Bypass Road, Vatluru (V), Eluru-534007, Eluru Dt., A.P., India; Phone Numbers: Main: +91-9492935222, +91-9492936222 (9AM-5PM); Admissions: +91-9492935222, admissions@rcee.ac.in; Main Email: rce.elr@yahoo.com, helpdesk@rcee.ac.in."
+  },
+  {
+    "question": "What are the department-wise contact details?",
+    "answer": "- Civil Engineering: Block-A, Third Floor-301, hod-civil@rcee.ac.in, +91-9440112013\n- Examination Cell: +91-8074277603, examcell@rcee.ac.in\n- Library: +9199125689930, library@rceee.ac.in"
+  },
+  {
+    "question": "What are RCE's accreditations and approvals?",
+    "answer": "- Approved by AICTE, New Delhi\n- Permanently affiliated to JNTTU, Kakinada\n- Accredited by NBA (B.Tech - Mech, ECE, CSE, Civil, EEE)\n- Accredited by NAAC with Letter Grade A+\n- Autonomous status granted"
+  },
+  {
+    "question": "What are RCE's recent achievements?",
+    "answer": "- Upgraded from NAAC B++ rating to A+ rating\n- Second NBA accreditation received\n- Institutional Grade-A with GOLD BAND in OBE Rankings-2023\n- GOLD BAND in Sustainable Institutions of India Green Rankings-2023"
+  },
+  {
+    "question": "What student organizations and activities are available?",
+    "answer": "- 200+ student organizations\n- 18 sports teams participating in inter-college tournaments\n- Regular cultural fests, technical events, workshops, seminars\n- National Service Scheme (NSS) activities\n- Technical clubs, literary society, drama club\n- Annual technical fest and cultural fest"
+  },
+  {
+    "question": "What is the campus environment like?",
+    "answer": "The campus environment at RCE is vibrant and supportive, featuring a 13-acre green campus with modern facilities, technology-enabled learning, and a strong community focus through student organizations and activities."
+  },
+  {
+    "question": "What is the faculty strength?",
+    "answer": "RCE has 190+ faculty members across all departments with a healthy faculty-student ratio of approximately 1:15."
+  },
+  {
+    "question": "What are the qualifications of faculty members?",
+    "answer": "Faculty members are highly qualified with Ph.D. and M.Tech degrees. Many have industry experience and publish research papers in reputed journals. The college regularly conducts faculty development programs."
+  },
+  {
+    "question": "Who are the key faculty members in Computer Science Engineering?",
+    "answer": "- Dr. G. Chamundeswari (Professor & HOD)\n- Dr. Shameena Begum (Professor)\n- Dr. Abdul Raheem SD (Professor)\n- Dr. T. Mohan Usha (Professor)\n- Dr. B. Sarada (Professor)\n- Dr. B. Prasad Babu (Associate Professor)\n- Dr. A. Chiranjeevi (Associate Professor)"
+  },
+  {
+    "question": "Who are the key faculty members in Electronics and Communication Engineering?",
+    "answer": "- Dr. B. Raghavalah (Professor & HOD)\n- Dr. S. Jagan Mohan Rao (Professor)\n- Dr. J. Prasanth Kumar (Professor)\n- Dr. M. L. Mahalakshmi (Professor)\n- Dr. MLSN Swarajlya Lakshmi (Professor)\n- Dr. G. Sri Latha (Professor)"
+  },
+  {
+    "question": "Who are the key faculty members in Civil Engineering?",
+    "answer": "- Dr. Kusuma Sundara Kumar (Professor & HOD)\n- Mr. Chintapalli Verottam Kumar (Associate Professor)\n- Mrs. Thota Kanaka Lakshmi (Associate Professor)\n- Mr. Dhunukonda Leela Prasad (Assistant Professor)\n- Mr. Kotipalli Somasekhar (Assistant Professor)"
+  },
+  {
+    "question": "What academic system does RCE follow?",
+    "answer": "RCE follows the Choice Based Credit System (CBCS) with a semester system. Each academic year has two semesters, and students need to earn minimum credits to progress."
+  },
+  {
+    "question": "How is the examination system structured?",
+    "answer": "The examination system includes: Continuous internal assessment (30%) and semester end examinations (70%). Internal assessment comprises mid-term tests, assignments, and lab work."
+  },
+  {
+    "question": "What is the grading system?",
+    "answer": "RCE uses a 10-point grading system with letter grades from O (Outstanding) to F (Fail). CGPA is calculated based on credit-weighted grade points."
+  },
+  {
+    "question": "What are the recent examination announcements?",
+    "answer": "- 2024 Batch MBA II Sem End Regular Exam Timetable\n- 2024 Batch BBA II Sem End Regular Exam Timetable\n- 2024 Batch M.Tech-II Semester-II Mid-Timeable\n- Various mid-term and end-semester examination schedules"
+  },
+  {
+    "question": "What industry partnerships does RCE have?",
+    "answer": "RCE has signed MOUs with various multinational companies including: TATA, Reliance HR Solutions, and other industry partners for practical training and placements."
+  },
+  {
+    "question": "What internship opportunities are available?",
+    "answer": "RCE facilitates internships with partner companies and organizations. Students are encouraged to pursue summer internships after their third year to gain practical experience."
+  },
+  {
+    "question": "How does RCE prepare students for industry?",
+    "answer": "RCE focuses on making students industry-ready through: Comprehensive training programs, industry visits and educational tours, guest lectures from industry experts, project-based learning, and skill development programs."
+  },
+  {
+    "question": "What research facilities are available?",
+    "answer": "RCE encourages research activities with: Dedicated research facilities, faculty-student collaborative research projects, publication opportunities in reputed journals, and research funding support."
+  },
+  {
+    "question": "What are the publication achievements?",
+    "answer": "RCE faculty have published 640+ research papers in various national and international journals and conferences."
+  },
+  {
+    "question": "Are there any innovation and incubation facilities?",
+    "answer": "RCE has plans to establish innovation and incubation centers to support student entrepreneurship and innovative projects."
+  },
+  {
+    "question": "What student support services are available?",
+    "answer": "RCE provides: Academic counseling and personal guidance, student grievance redressal mechanism, career guidance and counseling, anti-ragging committee for student safety, and student welfare programs."
+  },
+  {
+    "question": "What are the transportation facilities?",
+    "answer": "RCE provides bus facility for students from various locations in Eluru and surrounding areas. Bus timings are coordinated with college hours."
+  },
+  {
+    "question": "What medical facilities are available?",
+    "answer": "The campus has a medical center with first aid facilities and qualified medical staff. For emergencies, tie-ups with nearby hospitals ensure immediate medical care."
+  },
+  {
+    "question": "What is the fee payment process?",
+    "answer": "Fees can be paid: Online through the college portal using credit/debit cards, net banking, or UPI; Offline through demand drafts and cash at the college accounts office; Additional fees include examination fees, library fees, and activity fees."
+  },
+  {
+    "question": "How can students get financial aid?",
+    "answer": "RCE offers: Merit and need-based scholarships, government scholarships for SC/ST/OBC/EWS/PWD students, fee reimbursement scheme for eligible students, and Ramachandra Merit Scholarship worth up to Rs. 50 lakhs."
+  },
+  {
+    "question": "What are the recent college developments?",
+    "answer": "- Autonomous status achievement\n- NAAC A+ grade accreditation\n- NBA accreditation for multiple programs\n- Technology-enabled green campus initiatives\n- Drone training center establishment"
+  },
+  {
+    "question": "What are the current placement trends?",
+    "answer": "RCE shows consistent improvement in placements with: 2024: 800+ offers; 2023: 520+ offers; 2022: 510+ offers; Increasing industry participation and package offers."
+  },
+  {
+    "question": "What are the future plans of RCE?",
+    "answer": "- Establishing innovation and incubation centers\n- Expanding international collaborations\n- Enhancing research facilities\n- Achieving 100% placement for all students\n- Continuous infrastructure development"
+  },
+  {
+    "question": "How is RCE contributing to society?",
+    "answer": "- NSS activities and social service programs\n- Community development projects\n- Environmental sustainability initiatives\n- Skill development programs for local community"
+  },
+  {
+    "question": "What makes RCE unique?",
+    "answer": "- Autonomous status with academic flexibility\n- 13-acre green campus with modern facilities\n- Strong industry connections and 89% placement rate\n- Comprehensive training programs\n- NAAC A+ and NBA accreditations\n- Technology-enabled learning environment"
   }
 ]

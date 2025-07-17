@@ -1,66 +1,83 @@
 // src/ai/faqEngine.js
 
-import fs from 'fs';
-import path from 'path';
+import mongoose from 'mongoose';
 import stringSimilarity from 'string-similarity';
-import { fileURLToPath } from 'url';
+import dotenv from 'dotenv';
+import FAQ from '../models/faqModel.js'; // Adjust path if needed
 
-// Support __dirname in ES modules
-const __filename = fileURLToPath(import.meta.url);
-const __dirname = path.dirname(__filename);
+dotenv.config();
 
-// Resolve path to faq_data.json
-const faqPath = path.resolve(__dirname, '../data/faq_data.json');
+const MONGO_URI = process.env.MONGO_URI;
+let cachedFAQs = [];
 
-// Load the FAQ data
-let faqData = [];
-try {
-  const rawData = fs.readFileSync(faqPath, 'utf-8');
-  faqData = JSON.parse(rawData);
-  console.log('✅ FAQ data loaded successfully');
-} catch (err) {
-  console.error('❌ Failed to load FAQ data:', err.message);
-}
+// 🧼 Remove citations like :contentReference[oaicite:6]{index=6}
+const cleanAnswer = (text) =>
+  text.replace(/:contentReference\[oaicite:\d+]{index=\d+}/g, '').trim();
 
-// Normalize helper function
+// Normalize for comparison
 const normalize = (text) =>
   text.toLowerCase().replace(/[^a-z0-9 ]/gi, '').trim();
 
 /**
- * Finds the best matching answer from the FAQ dataset.
- * Uses fuzzy matching against individual words in questions to improve typo tolerance.
+ * Fetch and clean FAQ data from MongoDB
  */
-export function findBestMatch(userInput) {
-  if (!userInput || faqData.length === 0) {
-    return '⚠️ FAQ data unavailable or input missing.';
+async function loadFAQData() {
+  if (!cachedFAQs.length) {
+    try {
+      if (!mongoose.connection.readyState) {
+        await mongoose.connect(MONGO_URI, {
+          useNewUrlParser: true,
+          useUnifiedTopology: true,
+        });
+        console.log('✅ Connected to MongoDB (faqEngine)');
+      }
+
+      const faqs = await FAQ.find({});
+
+      // Clean answers while loading
+      cachedFAQs = faqs.map(faq => ({
+        question: normalize(faq.question),
+        answer: cleanAnswer(faq.answer),
+        original: faq.question,
+      }));
+
+      console.log(`✅ Loaded and cleaned ${cachedFAQs.length} FAQs`);
+    } catch (err) {
+      console.error('❌ Failed to load FAQ data:', err.message);
+      cachedFAQs = [];
+    }
+  }
+}
+
+/**
+ * Find the best matching answer using fuzzy logic
+ */
+export async function findBestMatch(userInput) {
+  if (!userInput) return '⚠️ Please enter a valid question.';
+
+  await loadFAQData();
+
+  if (!cachedFAQs.length) {
+    return '⚠️ FAQ data is currently unavailable.';
   }
 
   const input = normalize(userInput);
-  const normalizedFaq = faqData.map(item => ({
-    original: item,
-    normalized: normalize(item.question)
-  }));
+  const questions = cachedFAQs.map(f => f.question);
 
-  // First pass: Full question similarity
-  const fullMatches = stringSimilarity.findBestMatch(
-    input,
-    normalizedFaq.map(q => q.normalized)
-  );
+  const fullMatch = stringSimilarity.findBestMatch(input, questions);
 
-  if (fullMatches.bestMatch.rating >= 0.5) {
-    const best = normalizedFaq[fullMatches.bestMatchIndex];
-    return best.original.answer;
+  if (fullMatch.bestMatch.rating >= 0.4) {
+    return cachedFAQs[fullMatch.bestMatchIndex].answer;
   }
 
-  // Second pass: Try keyword-level comparison
-  for (const item of normalizedFaq) {
-    const words = item.normalized.split(/\s+/);
-    const { bestMatch } = stringSimilarity.findBestMatch(input.split(/\s+/).join(' '), words);
-    if (bestMatch.rating >= 0.6) {
-      return item.original.answer;
+  // Fallback to keyword-level fuzzy match
+  for (const faq of cachedFAQs) {
+    const words = faq.question.split(/\s+/);
+    const keywordMatch = stringSimilarity.findBestMatch(input, words);
+    if (keywordMatch.bestMatch.rating >= 0.6) {
+      return faq.answer;
     }
   }
 
-  return null; // Let other modules handle if this doesn't work
+  return null;
 }
-

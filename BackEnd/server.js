@@ -1,7 +1,14 @@
-// server.js or index.js
+// server.js
 import express from 'express';
 import cors from 'cors';
+import dotenv from 'dotenv';
+import mongoose from 'mongoose';
+
 import chatRoutes from './src/routes/chatRoutes.js';
+import connectDB from './src/config/db.js'; // 🔌 MongoDB config
+
+// 📦 Load environment variables
+dotenv.config();
 
 const app = express();
 const PORT = process.env.PORT || 5000;
@@ -10,6 +17,9 @@ const PORT = process.env.PORT || 5000;
 app.use(cors());
 app.use(express.json());
 console.log('🔧 Middleware initialized: CORS and JSON parser');
+
+// 🔌 Connect to MongoDB
+connectDB();
 
 // ✅ Health check route
 app.get('/', (req, res) => {
@@ -23,16 +33,16 @@ app.get('/favicon.ico', (req, res) => {
   res.status(204).end();
 });
 
-// 💬 Main Chat route - connects to Python backend
+// 💬 Main Chat route
 app.use('/api/chat', chatRoutes);
 
-// ✅ Catch-all error logging
+// 🧯 Catch-all error handler
 app.use((err, req, res, next) => {
   console.error('💥 Unhandled server error:', err);
   res.status(500).json({ error: 'Internal Server Error' });
 });
 
-// 🚀 Start Express server
+// 🚀 Start server
 app.listen(PORT, () => {
-  console.log(`🚀 Node.js server is running at: http://localhost:${PORT}`);
+  console.log(`🚀 Server running at: http://localhost:${PORT}`);
 });
