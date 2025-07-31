@@ -50,7 +50,7 @@ const ChatProvider = ({ children }) => {
       try {
         console.log('📤 Sending to backend:', content);
 
-        const responsePromise = fetch('http://localhost:5000/api/chat', {
+        const responsePromise = fetch('http://localhost:5000/api/chat/', {
           method: 'POST',
           headers: {
             'Content-Type': 'application/json',
