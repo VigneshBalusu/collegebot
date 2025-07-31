@@ -48,14 +48,14 @@ const ChatProvider = ({ children }) => {
       setIsTyping(true);
 
       try {
-        console.log('📤 Sending to backend:', content);
+        const API_BASE_URL = import.meta.env.VITE_API_BASE_URL;
 
-        const responsePromise = fetch('http://localhost:5000/api/chat/', {
+        const responsePromise = fetch(`${API_BASE_URL}/chat/`, {
           method: 'POST',
           headers: {
             'Content-Type': 'application/json',
           },
-          body: JSON.stringify({ question: content }), // ✅ Must match backend format
+          body: JSON.stringify({ question: content }),
         });
 
         const [res] = await Promise.all([
@@ -64,9 +64,6 @@ const ChatProvider = ({ children }) => {
         ]);
 
         const data = await res.json();
-        console.log('📥 Received from backend:', data);
-
-        // ✅ Corrected to check 'answer' instead of 'reply'
         const reply = data.answer || data.error || "⚠️ No response from the assistant.";
         addMessage(reply, 'bot');
       } catch (error) {
