@@ -1,0 +1,18 @@
+services:
+  - type: web
+    name: rce-backend
+    env: python
+    plan: free
+    region: oregon  # or frankfurt, depending on your preference
+    buildCommand: "pip install -r requirements.txt"
+    startCommand: "gunicorn app:app"
+    repo: https://github.com/VigneshBalusu/collegebot
+    branch: master
+    rootDir: BackEnd
+    envVars:
+      - key: FLASK_ENV
+        value: production
+      - key: CORS_ORIGIN
+        value: https://rcechatbot.netlify.app
+      - key: MONGO_URI
+        value: your_mongodb_connection_string

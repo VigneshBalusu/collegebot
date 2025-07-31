@@ -1,0 +1,10 @@
+[build]
+  base = "FrontEnd"
+  publish = "FrontEnd/dist"
+  command = "npm run build"
+
+[dev]
+  framework = "vite"
+
+[env]
+  VITE_API_BASE_URL = "https://<your-backend-service>.onrender.com/api"
