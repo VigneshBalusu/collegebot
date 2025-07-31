@@ -1,8 +1,12 @@
 import React from 'react';
 import { GraduationCap, Phone, Mail, Menu } from 'lucide-react';
-import { collegeData } from '../data/collegeData';
 
 const CollegeHeader = () => {
+  const collegeName = "Ramachandra College of Engineering";
+  const collegeMotto = "Empowering Through Knowledge";
+  const contactEmail = "info@rce.edu.in";
+  const contactPhone = "+91 98765 43210";
+
   return (
     <header className="bg-white shadow-sm">
       {/* Top bar with contact info */}
@@ -11,18 +15,18 @@ const CollegeHeader = () => {
           {/* Contact info */}
           <div className="text-xs md:text-sm flex items-center space-x-4">
             <a
-              href={`mailto:${collegeData.admissions.contactEmail}`}
+              href={`mailto:${contactEmail}`}
               className="flex items-center hover:text-blue-200 transition-colors"
             >
               <Mail size={14} className="mr-1" />
-              <span className="hidden sm:inline">{collegeData.admissions.contactEmail}</span>
+              <span className="hidden sm:inline">{contactEmail}</span>
             </a>
             <a
-              href={`tel:${collegeData.admissions.contactPhone}`}
+              href={`tel:${contactPhone}`}
               className="flex items-center hover:text-blue-200 transition-colors"
             >
               <Phone size={14} className="mr-1" />
-              <span>{collegeData.admissions.contactPhone}</span>
+              <span>{contactPhone}</span>
             </a>
           </div>
 
@@ -44,15 +48,15 @@ const CollegeHeader = () => {
           <GraduationCap size={36} className="text-blue-800 mr-2" />
           <div>
             <h1 className="font-bold text-xl text-blue-900">
-              {collegeData.generalInfo.name}
+              {collegeName}
             </h1>
             <p className="text-xs text-gray-600 italic">
-              {collegeData.generalInfo.motto}
+              {collegeMotto}
             </p>
           </div>
         </div>
 
-        {/* Mobile menu icon (non-functional placeholder) */}
+        {/* Mobile menu icon (non-functional) */}
         <button className="md:hidden p-2 text-blue-800" aria-label="Open Menu">
           <Menu size={24} />
         </button>

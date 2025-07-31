@@ -4,8 +4,20 @@ import ChatBubble from './ChatBubble';
 import ChatInput from './ChatInput';
 import QuickReplies from './QuickReplies';
 import TypingIndicator from './TypingIndicator';
-import { quickReplies } from '../../data/collegeData';
 import { BookOpen, Minus, Maximize2, Minimize2 } from 'lucide-react';
+
+// Inline quick replies
+const quickReplies = [
+  "Admission process",
+  "Fee structure",
+  "Hostel facilities",
+  "Placement statistics",
+  "Scholarships",
+  "Library facilities",
+  "Campus life",
+  "Contact number",
+  "Who is the principal?",
+];
 
 const ChatContainer = () => {
   const { messages, isTyping, sendMessage } = useChatContext();
@@ -18,7 +30,6 @@ const ChatContainer = () => {
   const [dragging, setDragging] = useState(false);
   const offset = useRef({ x: 0, y: 0 });
 
-  // Scroll to last user message
   useEffect(() => {
     const lastUserIndex = [...messages]
       .map((msg, i) => (msg.sender === 'user' ? i : null))
@@ -34,14 +45,12 @@ const ChatContainer = () => {
     }
   }, [messages]);
 
-  // Auto-hide FAQ on bot response
   useEffect(() => {
     if (messages.length > 1 && messages[messages.length - 1].sender === 'bot') {
       setShowFAQ(false);
     }
   }, [messages]);
 
-  // Dragging behavior
   const handleMouseDown = (e) => {
     if (isFullscreen) return;
     setDragging(true);
@@ -70,7 +79,6 @@ const ChatContainer = () => {
     };
   }, [dragging, isFullscreen]);
 
-  // Minimized view
   if (isMinimized) {
     return (
       <button
@@ -105,7 +113,6 @@ const ChatContainer = () => {
           </div>
         </div>
         <div className="flex items-center gap-2">
-          {/* Minimize chat button */}
           <button
             onClick={() => setIsMinimized(true)}
             className="hover:text-blue-300"
@@ -113,8 +120,6 @@ const ChatContainer = () => {
           >
             <Minus size={18} />
           </button>
-
-          {/* Fullscreen toggle button */}
           <button
             onClick={() => setIsFullscreen((prev) => !prev)}
             className="hover:text-blue-300"
@@ -143,7 +148,6 @@ const ChatContainer = () => {
           </div>
         )}
 
-        {/* FAQ Section */}
         {showFAQ && (
           <div
             className={`z-20 ${
@@ -174,10 +178,8 @@ const ChatContainer = () => {
         )}
       </div>
 
-      {/* Chat input */}
       <ChatInput onSendMessage={sendMessage} disabled={isTyping} />
 
-      {/* Reopen FAQ button */}
       {!showFAQ && (
         <button
           onClick={() => setShowFAQ(true)}

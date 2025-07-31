@@ -42,28 +42,35 @@ const ChatProvider = ({ children }) => {
 
   const sendMessage = useCallback(
     async (content) => {
+      if (!content || !content.trim()) return;
+
       addMessage(content, 'user');
       setIsTyping(true);
 
       try {
+        console.log('📤 Sending to backend:', content);
+
         const responsePromise = fetch('http://localhost:5000/api/chat', {
           method: 'POST',
           headers: {
             'Content-Type': 'application/json',
           },
-          body: JSON.stringify({ message: content }),
+          body: JSON.stringify({ question: content }), // ✅ Must match backend format
         });
 
         const [res] = await Promise.all([
           responsePromise,
-          new Promise((resolve) => setTimeout(resolve, 800)),
+          new Promise((resolve) => setTimeout(resolve, 800)), // Simulate typing delay
         ]);
 
         const data = await res.json();
-        const reply = data.reply || data.error || "⚠️ No response from the assistant.";
+        console.log('📥 Received from backend:', data);
+
+        // ✅ Corrected to check 'answer' instead of 'reply'
+        const reply = data.answer || data.error || "⚠️ No response from the assistant.";
         addMessage(reply, 'bot');
       } catch (error) {
-        console.error('Error contacting backend:', error);
+        console.error('❌ Error contacting backend:', error);
         addMessage("❌ Couldn't reach the assistant. Try again later.", 'bot');
       } finally {
         setIsTyping(false);

@@ -7,23 +7,35 @@ import {
   Linkedin,
   Youtube,
 } from 'lucide-react';
-import { collegeData } from '../data/collegeData';
 
 const CollegeFooter = () => {
+  const collegeName = "Ramachandra College of Engineering";
+  const location = "Eluru, Andhra Pradesh";
+  const phone = "+91 98765 43210";
+
+  const academicSchools = [
+    "School of Engineering",
+    "School of Management",
+    "School of Computing",
+    "School of Sciences",
+    "School of Humanities"
+  ];
+
   return (
     <footer className="bg-blue-900 text-white pt-8 pb-4">
       <div className="container mx-auto px-4">
         <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
+          
           {/* Logo and address */}
           <div>
             <div className="flex items-center mb-4">
               <GraduationCap size={32} className="mr-2" />
-              <h3 className="font-bold text-lg">{collegeData.generalInfo.name}</h3>
+              <h3 className="font-bold text-lg">{collegeName}</h3>
             </div>
             <address className="not-italic text-blue-200 text-sm">
               123 University Drive<br />
-              {collegeData.generalInfo.location}<br />
-              {collegeData.admissions.contactPhone}
+              {location}<br />
+              {phone}
             </address>
             <div className="flex mt-4 space-x-3">
               <a href="#" className="text-blue-200 hover:text-white transition-colors">
@@ -44,13 +56,13 @@ const CollegeFooter = () => {
             </div>
           </div>
 
-          {/* Academics Links */}
+          {/* Academics */}
           <div>
             <h4 className="font-semibold mb-3 text-sm uppercase tracking-wider">
               Academics
             </h4>
             <ul className="space-y-2 text-sm text-blue-200">
-              {collegeData.academics.schools.slice(0, 5).map((school, index) => (
+              {academicSchools.map((school, index) => (
                 <li key={index}>
                   <a href="#" className="hover:text-white transition-colors">
                     {school}
@@ -85,7 +97,7 @@ const CollegeFooter = () => {
               <li><a href="#" className="hover:text-white transition-colors">Library</a></li>
               <li><a href="#" className="hover:text-white transition-colors">Academic Calendar</a></li>
               <li><a href="#" className="hover:text-white transition-colors">Safety & Security</a></li>
-              <li><a href="#" className="hover:text-white transition-colors">Careers at Horizon</a></li>
+              <li><a href="#" className="hover:text-white transition-colors">Careers</a></li>
               <li><a href="#" className="hover:text-white transition-colors">Accessibility</a></li>
             </ul>
           </div>
@@ -94,7 +106,7 @@ const CollegeFooter = () => {
         {/* Bottom Bar */}
         <div className="border-t border-blue-800 mt-8 pt-4 text-xs text-blue-300 flex flex-col md:flex-row justify-between items-center">
           <div>
-            &copy; {new Date().getFullYear()} {collegeData.generalInfo.name}. All rights reserved.
+            &copy; {new Date().getFullYear()} {collegeName}. All rights reserved.
           </div>
           <div className="mt-2 md:mt-0">
             <a href="#" className="hover:text-white transition-colors">Privacy Policy</a>
