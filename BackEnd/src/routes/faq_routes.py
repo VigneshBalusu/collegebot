@@ -2,17 +2,16 @@ import os
 import re
 import logging
 from flask import Blueprint, request, jsonify
-from flask_cors import cross_origin
 from src.ai.embedding_engine import RceSmartBot, load_faqs_from_database
 
-# Create Blueprint
+# Create blueprint
 chat_bp = Blueprint("chat_bp", __name__)
 
-# Read allowed origin from environment variable (fallback to localhost)
+# Log the allowed origin (for debug purposes only)
 ALLOWED_ORIGIN = os.getenv("ALLOWED_ORIGIN", "http://localhost:5173")
 logging.info(f"🌐 CORS Allowed Origin: {ALLOWED_ORIGIN}")
 
-# --- Bot Initialization ---
+# Initialize bot
 bot = None
 logging.info("🔄 Attempting to load FAQ data and initialize bot...")
 
@@ -26,10 +25,8 @@ try:
 except Exception as e:
     logging.critical(f"🔥 Critical error during bot initialization: {e}", exc_info=True)
 
-# ---------------------------
-
+# Chat endpoint
 @chat_bp.route('/chat/', methods=['POST'])
-@cross_origin(origins=ALLOWED_ORIGIN)
 def chat():
     if not bot:
         logging.error("🛑 Bot is not initialized.")
@@ -41,7 +38,7 @@ def chat():
         user_input = request.json.get("question", "")
         if not user_input.strip():
             return jsonify({"error": "No question provided"}), 400
-        
+
         result = bot.get_answer(user_input)
         cleaned_answer = re.sub(r'\[[0-9, ]+\]', '', result['answer']).strip()
 

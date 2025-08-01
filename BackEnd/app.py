@@ -6,14 +6,22 @@ from dotenv import load_dotenv
 # Load environment variables
 load_dotenv()
 
+# Import blueprint AFTER loading environment variables
+from src.routes.faq_routes import chat_bp
+
 # Create Flask app
 app = Flask(__name__)
 
-# ✅ Apply CORS with explicit origin and allow headers
-CORS(app, origins=["https://rcechatbot.netlify.app"], methods=["GET", "POST"], allow_headers=["Content-Type"])
+# ✅ Global CORS setup (apply to all /api/* routes)
+CORS(
+    app,
+    resources={r"/api/*": {"origins": "https://rcechatbot.netlify.app"}},
+    supports_credentials=True,
+    methods=["GET", "POST", "OPTIONS"],
+    allow_headers=["Content-Type", "Authorization"]
+)
 
-# Import blueprint AFTER app + CORS are initialized
-from src.routes.faq_routes import chat_bp
+# Register the chat blueprint
 app.register_blueprint(chat_bp, url_prefix='/api')
 
 @app.route("/")
