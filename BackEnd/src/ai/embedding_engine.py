@@ -54,7 +54,9 @@ class RceSmartBot:
         "fee": ["fees", "tuition", "cost", "payment"],
         "hostel": ["hostels", "accommodation", "dorm", "residence"],
         "placement": ["placements", "job", "career", "recruitment"],
-        "director": ["md", "managing director", "head", "chairman"]
+        "director": ["md", "managing director", "head", "chairman"],
+        "buses":["bus","transport","vehicle","daily service"],
+        "fest":["fests","kreya","clutural","enojyment"]
     }
 
     def __init__(self, faqs_data: List[Dict[str, str]]):
