@@ -12,7 +12,7 @@ app = Flask(__name__)
 # ✅ CORS setup: allow both production and local development
 CORS(
     app,
-    resources={r"/api/*": {"origins": [
+    resources={r"/*": {"origins": [
         "https://rcechatbot.netlify.app",
         "http://localhost:5173"
     ]}},
