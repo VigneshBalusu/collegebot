@@ -324,7 +324,26 @@
     "answer": "B.Tech programs have a total tuition fee ranging from ₹1.51 to ₹2.41 lakh depending on the specialization. M.Tech courses cost around ₹1.10 lakh in total, and the full-time MBA program has a tuition fee of approximately ₹70,000. The first-year fee under Convenor Quota for B.Tech is about ₹60,200."
   },
   {
-    "question": "Hostel facility?",
+    "question": "Do you have hostel facilities?",
     "answer": "Yes, RCE offers on-campus hostel facilities for both boys and girls. The hostels are equipped with shared non-AC rooms, basic furniture, and dining facilities. For full details including fees and rules, contact the college administration or visit the official website."
-  }
+  },{
+      "question": "What is Kreya?",
+      "answer": "Kreya is RCEE's annual national-level fest that combines technical and cultural elements, starting from 2022. It includes events like paper presentations, project expos, competitions, and awareness activities."
+    },
+    {
+      "question": "When is Kreya typically held?",
+      "answer": "Kreya is usually organized in the first half of the year, such as March or February. For example, Kreya-22 was on March 31 and April 1, 2022, and Kreya 2K25 was on February 21, 2025."
+    },
+    {
+      "question": "What types of events are featured in Kreya?",
+      "answer": "The fest features technical events like paper presentations and project expos, cultural competitions such as Miss Kreya, and awareness initiatives like 2K runs for cancer awareness."
+    },
+    {
+      "question": "Who can participate in Kreya?",
+      "answer": "Participants typically include students from various engineering years at RCEE and other institutions, presenting ideas to judges from universities like K L University."
+    },
+    {
+      "question": "How can I get more details or register for Kreya?",
+      "answer": "Visit the official RCEE website or contact the college's event organizers for updates on upcoming editions, registration, and schedules."
+    }
 ]

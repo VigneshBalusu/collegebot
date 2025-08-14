@@ -25,9 +25,13 @@ try:
 except Exception as e:
     logging.critical(f"🔥 Critical error during bot initialization: {e}", exc_info=True)
 
-# Chat endpoint
-@chat_bp.route('/chat/', methods=['POST'])
+# Chat endpoint (no trailing slash, OPTIONS allowed)
+@chat_bp.route('/chat', methods=['POST', 'OPTIONS'])
 def chat():
+    # Handle CORS preflight directly
+    if request.method == 'OPTIONS':
+        return '', 200
+
     if not bot:
         logging.error("🛑 Bot is not initialized.")
         return jsonify({

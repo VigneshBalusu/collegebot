@@ -12,16 +12,22 @@ from src.routes.faq_routes import chat_bp
 # Create Flask app
 app = Flask(__name__)
 
-# ✅ Global CORS setup (apply to all /api/* routes)
+# ✅ CORS setup: allow both production and local development
 CORS(
     app,
-    resources={r"/api/*": {"origins": "https://rcechatbot.netlify.app"}},
+    resources={r"/api/*": {"origins": [
+        "https://rcechatbot.netlify.app",
+        "http://localhost:5173"
+    ]}},
     supports_credentials=True,
     methods=["GET", "POST", "OPTIONS"],
     allow_headers=["Content-Type", "Authorization"]
 )
 
-# Register the chat blueprint
+# Disable strict_slashes to avoid redirect on missing/extra slash (fixes CORS preflight issues)
+app.url_map.strict_slashes = False
+
+# Register the chat blueprint under /api
 app.register_blueprint(chat_bp, url_prefix='/api')
 
 @app.route("/")
