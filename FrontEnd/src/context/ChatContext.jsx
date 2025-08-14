@@ -49,12 +49,12 @@ export const ChatProvider = ({ children }) => {
       setIsTyping(true);
 
       try {
-        // Use environment variable for API URL, fallback to localhost
+        // Base URL from environment, without trailing slash
         const API_BASE_URL =
           import.meta.env.VITE_API_URL?.replace(/\/$/, '') || "http://localhost:5000";
 
-        // Send POST request to backend
-        const res = await fetch(`${API_BASE_URL}/api/chat`, {
+        // ✅ Correct endpoint: do NOT add extra /api if your backend URL already has it
+        const res = await fetch(`${API_BASE_URL}/chat`, {
           method: 'POST',
           headers: {
             'Content-Type': 'application/json',
@@ -70,6 +70,7 @@ export const ChatProvider = ({ children }) => {
 
         const data = await res.json();
         const reply = data.answer || data.error || "⚠️ No response from the assistant.";
+
         // Simulate typing delay
         setTimeout(() => addMessage(reply, 'bot'), 500);
 
