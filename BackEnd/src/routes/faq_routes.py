@@ -7,13 +7,11 @@ from src.ai.embedding_engine import RceSmartBot, load_faqs_from_database
 # Create blueprint
 chat_bp = Blueprint("chat_bp", __name__)
 
-# Log the allowed origin (for debug purposes only)
-ALLOWED_ORIGIN = os.getenv("ALLOWED_ORIGIN", "http://localhost:5173")
-logging.info(f"🌐 CORS Allowed Origin: {ALLOWED_ORIGIN}")
-
+# -----------------------------
 # Initialize bot
+# -----------------------------
 bot = None
-logging.info("🔄 Attempting to load FAQ data and initialize bot...")
+logging.info("🔄 Attempting to load FAQ data...")
 
 try:
     faq_documents = load_faqs_from_database()
@@ -21,22 +19,20 @@ try:
         bot = RceSmartBot(faqs_data=faq_documents)
         logging.info("✅ Bot initialized successfully.")
     else:
-        logging.critical("❌ Bot could not be initialized because no FAQ documents were loaded from the database.")
+        logging.warning("⚠️ No FAQ documents found. Initializing bot with empty data.")
+        bot = RceSmartBot(faqs_data=[])
 except Exception as e:
-    logging.critical(f"🔥 Critical error during bot initialization: {e}", exc_info=True)
+    logging.critical(f"🔥 Bot initialization failed: {e}", exc_info=True)
+    bot = RceSmartBot(faqs_data=[])  # Fallback to empty bot to prevent crashes
 
-# Chat endpoint (no trailing slash, OPTIONS allowed)
-@chat_bp.route('/chat', methods=['POST', 'OPTIONS'])
+# -----------------------------
+# Chat endpoint
+# -----------------------------
+@chat_bp.route('/chat', methods=['POST'])
 def chat():
-    # Handle CORS preflight directly
-    if request.method == 'OPTIONS':
-        return '', 200
-
     if not bot:
         logging.error("🛑 Bot is not initialized.")
-        return jsonify({
-            "error": "The chatbot could not be initialized. Please check the server logs for a fatal error."
-        }), 503
+        return jsonify({"error": "Chatbot not available"}), 503
 
     try:
         user_input = request.json.get("question", "")
@@ -48,10 +44,10 @@ def chat():
 
         return jsonify({
             "answer": cleaned_answer,
-            "matched_question": result['matched_question'],
-            "score": result['score']
+            "matched_question": result.get('matched_question', ''),
+            "score": result.get('score', 0)
         }), 200
 
     except Exception as e:
-        logging.error(f"An error occurred during chat processing: {e}", exc_info=True)
-        return jsonify({"error": "An internal server error occurred."}), 500
+        logging.error(f"Error processing chat: {e}", exc_info=True)
+        return jsonify({"error": "Internal server error"}), 500

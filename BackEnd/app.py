@@ -1,18 +1,23 @@
 import os
-from flask import Flask, request, jsonify
+from flask import Flask
 from flask_cors import CORS
 from dotenv import load_dotenv
 
-# Load environment variables from .env
+# Load environment variables
 load_dotenv()
+
+# Import your bot blueprint
+from src.routes.faq_routes import chat_bp
 
 # Create Flask app
 app = Flask(__name__)
 
-# ✅ CORS setup: allow both production and local development
+# -----------------------------
+# ✅ CORS setup
+# -----------------------------
 CORS(
     app,
-    resources={r"/*": {"origins": [
+    resources={r"/api/*": {"origins": [
         "https://rcechatbot.netlify.app",
         "http://localhost:5173"
     ]}},
@@ -25,35 +30,19 @@ CORS(
 app.url_map.strict_slashes = False
 
 # -----------------------------
-# Sample Blueprint: chat routes
+# Register blueprint
 # -----------------------------
-from flask import Blueprint
-
-chat_bp = Blueprint('chat', __name__)
-
-@chat_bp.route('/chat', methods=['POST'])
-def chat():
-    data = request.json
-    message = data.get('message', '')
-    
-    # Example response
-    response = {
-        "reply": f"Received your message: {message}"
-    }
-    return jsonify(response), 200
-
-# Register blueprint under /api
 app.register_blueprint(chat_bp, url_prefix='/api')
 
 # -----------------------------
-# Root route to check API status
+# Root route
 # -----------------------------
 @app.route("/")
 def index():
     return "✅ RCE FAQ Bot API is running!"
 
 # -----------------------------
-# Run Flask app
+# Run Flask
 # -----------------------------
 if __name__ == "__main__":
     port = int(os.environ.get("PORT", 5000))

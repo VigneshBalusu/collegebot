@@ -33,6 +33,7 @@ export const ChatProvider = ({ children }) => {
     setMessages((prev) => [...prev, newMessage]);
   }, []);
 
+  // Welcome message
   useEffect(() => {
     if (!hasWelcomed.current) {
       addMessage("👋 Hello! I'm the RCE virtual assistant. How can I help you today?", 'bot');
@@ -48,37 +49,30 @@ export const ChatProvider = ({ children }) => {
       setIsTyping(true);
 
       try {
+        // Use environment variable for API URL, fallback to localhost
         const API_BASE_URL =
           import.meta.env.VITE_API_URL?.replace(/\/$/, '') || "http://localhost:5000";
 
-        const responsePromise = fetch(`${API_BASE_URL}/chat`, {
+        // Send POST request to backend
+        const res = await fetch(`${API_BASE_URL}/api/chat`, {
           method: 'POST',
           headers: {
             'Content-Type': 'application/json',
           },
-          credentials: 'include', // ✅ Ensures cookies/sessions if needed
+          credentials: 'include', // Needed if backend sets cookies
           body: JSON.stringify({ question: content }),
         });
-
-        const [res] = await Promise.all([
-          responsePromise,
-          new Promise((resolve) => setTimeout(resolve, 800)), // Simulate typing delay
-        ]);
 
         if (!res.ok) {
           const errorText = await res.text();
           throw new Error(`Server returned ${res.status}: ${errorText}`);
         }
 
-        let data;
-        try {
-          data = await res.json();
-        } catch {
-          throw new Error("Invalid JSON received from backend");
-        }
-
+        const data = await res.json();
         const reply = data.answer || data.error || "⚠️ No response from the assistant.";
-        addMessage(reply, 'bot');
+        // Simulate typing delay
+        setTimeout(() => addMessage(reply, 'bot'), 500);
+
       } catch (error) {
         console.error('❌ Error contacting backend:', error.message || error);
         addMessage("❌ Couldn't reach the assistant. Try again later.", 'bot');
